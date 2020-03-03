@@ -30,7 +30,7 @@ const renderCustomizedLabel = ({
   );
 };
 
-const PieChartComponent = ({ Data }) => {
+const PieChartComponent = ({ Data, Content }) => {
   return (
     <>
       <PieChart width={200} height={200}>
@@ -45,7 +45,7 @@ const PieChartComponent = ({ Data }) => {
             <Cell fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
-        <Tooltip />
+        <Tooltip content={Content} />
       </PieChart>
     </>
   );

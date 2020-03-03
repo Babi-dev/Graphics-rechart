@@ -31,12 +31,27 @@ const columns = [
   }
 ];
 
+const CustomTooltip = ({ active, payload, label }) => {
+  console.log(label);
+  if (active) {
+    return (
+      <div className="custom-tooltip">
+        <p className="label">{`${label} : ${payload[0].value}`}</p>
+        {/* <p className="intro">{getIntroOfPage(label)}</p> */}
+        {/* <p className="desc">Anything you want can be displayed here.</p> */}
+      </div>
+    );
+  }
+
+  return null;
+};
+
 function GraphicsView() {
   const newData = useMemo(() => {
     return dataBase.map(value => ({
       id: value.id,
-      "Clientes": value.clients,
-      "Funcionários": value.employees
+      Clientes: value.clients,
+      Funcionários: value.employees
     }));
   }, [dataBase]);
 
@@ -45,7 +60,7 @@ function GraphicsView() {
       id: e.id,
       name: e.name,
       value: e.employees
-    }))
+    }));
   }, [dataBase]);
 
   const handleSaveClick = (id, nameImage) => {
@@ -53,14 +68,16 @@ function GraphicsView() {
       fileDownload(blob, nameImage);
     });
   };
-  
+
   return (
-    <Graphics 
+    <Graphics
       dataBar={newData}
       dataPieChart={dataEmployees}
       columnsBar={columns}
       dataCSV={dataBase}
-      headersCSV={headers} 
+      headersCSV={headers}
+      ActivePieChart={true}
+      ContentPieChart={CustomTooltip}
       onClickCSV={() => {
         handleSaveClick("01", "graphics-image.png");
       }}

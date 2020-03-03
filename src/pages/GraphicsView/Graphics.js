@@ -10,7 +10,9 @@ function Graphics({
   dataCSV,
   onClickCSV,
   headersCSV,
-  dataPieChart
+  dataPieChart,
+  ContentPieChart,
+  ActivePieChart
 }) {
   return (
     <>
@@ -40,7 +42,11 @@ function Graphics({
         />
       </div>
 
-      <PieChartComponent Data={dataPieChart} />
+      <PieChartComponent
+        Data={dataPieChart}
+        Content={ContentPieChart}
+        active={ActivePieChart}
+      />
     </>
   );
 }
