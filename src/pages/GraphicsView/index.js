@@ -31,7 +31,7 @@ const columns = [
   }
 ];
 
-function GraphicsView(){
+function GraphicsView() {
   const newData = useMemo(() => {
     return dataBase.map(value => ({
       id: value.id,
