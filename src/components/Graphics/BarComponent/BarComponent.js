@@ -16,7 +16,8 @@ const BarComponent = ({
   grid,
   Data,
   dataKeyName,
-  Columns
+  Columns,
+  Id
 }) => {
   return (
     <>

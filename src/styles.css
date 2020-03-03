@@ -2,3 +2,22 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.btn {
+  padding: 10px;
+  margin: 20px;
+  width: 160px;
+  background-color: #fff;
+  border: 1px solid #a32c29;
+  border-radius: 6px;
+  color: #a32c29;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #a32c29;
+  color: #fff;
+}
