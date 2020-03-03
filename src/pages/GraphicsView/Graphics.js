@@ -4,9 +4,15 @@ import BarComponent from "../../components/Graphics/BarComponent/BarComponent";
 import DowndloadTable from "../../components/CSVLinkComponent/CSVLinkComponent";
 import PieChartComponent from "../../components/Graphics/PieChartComponent/PieChartComponent";
 
-function Graphics({dataBar, columnsBar, dataCSV, onClickCSV, headersCSV, dataPieChart}){
-  
-  return(
+function Graphics({
+  dataBar,
+  columnsBar,
+  dataCSV,
+  onClickCSV,
+  headersCSV,
+  dataPieChart
+}) {
+  return (
     <>
       <section id="01" style={{ backgroundColor: "#fff" }}>
         <BarComponent
@@ -24,10 +30,7 @@ function Graphics({dataBar, columnsBar, dataCSV, onClickCSV, headersCSV, dataPie
 
       <div>
         <div id="node-to-convert" />
-        <button
-          className="btn"
-          onClick={onClickCSV}
-        >
+        <button className="btn" onClick={onClickCSV}>
           Download Image
         </button>
         <DowndloadTable
@@ -38,7 +41,7 @@ function Graphics({dataBar, columnsBar, dataCSV, onClickCSV, headersCSV, dataPie
       </div>
 
       <PieChartComponent Data={dataPieChart} />
-      </>
+    </>
   );
 }
 
