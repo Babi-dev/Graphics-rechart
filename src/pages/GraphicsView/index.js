@@ -40,6 +40,14 @@ function GraphicsView(){
     }));
   }, [dataBase]);
 
+  const dataEmployees = useMemo(() => {
+    return dataBase.map(e => ({
+      id: e.id,
+      name: e.name,
+      value: e.employees
+    }))
+  }, [dataBase]);
+
   const handleSaveClick = (id, nameImage) => {
     domtoimage.toBlob(document.getElementById(id)).then(function(blob) {
       fileDownload(blob, nameImage);
@@ -49,6 +57,7 @@ function GraphicsView(){
   return (
     <Graphics 
       dataBar={newData}
+      dataPieChart={dataEmployees}
       columnsBar={columns}
       dataCSV={dataBase}
       headersCSV={headers} 

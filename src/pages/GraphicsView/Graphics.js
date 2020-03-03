@@ -2,8 +2,9 @@ import React from "react";
 
 import BarComponent from "../../components/Graphics/BarComponent/BarComponent";
 import DowndloadTable from "../../components/CSVLinkComponent/CSVLinkComponent";
+import PieChartComponent from "../../components/Graphics/PieChartComponent/PieChartComponent";
 
-function Graphics({dataBar, columnsBar, dataCSV, onClickCSV, headersCSV}){
+function Graphics({dataBar, columnsBar, dataCSV, onClickCSV, headersCSV, dataPieChart}){
   
   return(
     <>
@@ -35,6 +36,8 @@ function Graphics({dataBar, columnsBar, dataCSV, onClickCSV, headersCSV}){
           FileName={"Graphic-csv.csv"}
         />
       </div>
+
+      <PieChartComponent Data={dataPieChart} />
       </>
   );
 }
