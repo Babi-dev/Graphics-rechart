@@ -32,13 +32,12 @@ const columns = [
 ];
 
 const CustomTooltip = ({ active, payload, label }) => {
-  console.log(label);
   if (active) {
     return (
       <div className="custom-tooltip">
-        <p className="label">{`${label} : ${payload[0].value}`}</p>
-        {/* <p className="intro">{getIntroOfPage(label)}</p> */}
-        {/* <p className="desc">Anything you want can be displayed here.</p> */}
+        <span className="label">{`${payload[0].name} : ${
+          payload[0].value
+        }`}</span>
       </div>
     );
   }
